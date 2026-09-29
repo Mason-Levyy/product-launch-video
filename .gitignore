@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+node_modules/
+__pycache__/
+.venv/
+PLAN.md

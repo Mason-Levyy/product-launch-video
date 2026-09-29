@@ -1,0 +1,16 @@
+{
+  "name": "product-launch-video-skill",
+  "private": true,
+  "description": "Type-check harness for the product-launch-video skill's Remotion kit. Not a runtime package.",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@remotion/media": "4.0.530",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "remotion": "4.0.530",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,32 @@
+name: Gate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: pip install pyyaml numpy scipy
+      - run: npm ci
+      - name: Skill frontmatter
+        run: python scripts/validate_skill.py
+      - name: Soundtrack smoke test
+        run: python scripts/smoke_soundtrack.py
+      - name: Kit type-check
+        run: npm run typecheck
+      - name: Shellcheck
+        run: shellcheck product-launch-video/scripts/*.sh
