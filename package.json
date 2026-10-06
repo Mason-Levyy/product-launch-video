@@ -7,10 +7,10 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "devDependencies": {
-    "@remotion/media": "4.0.530",
+    "@remotion/media": "4.0.532",
     "@types/react": "^19.3.0",
     "react": "^19.3.0",
-    "remotion": "4.0.530",
+    "remotion": "4.0.532",
     "typescript": "^7.0.2"
   }
 }
